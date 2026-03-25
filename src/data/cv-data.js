@@ -190,7 +190,7 @@ export const cvData = {
     },
     {
       language: { en: "English", de: "Englisch" },
-      level: { en: "Upper-intermediate (B2)", de: "Gute Kenntnisse (B2)" },
+      level: { en: "Upper-intermediate (B2)", de: "Fließend (B2)" },
     },
   ],
 
