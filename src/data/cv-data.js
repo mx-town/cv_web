@@ -54,8 +54,8 @@ export const cvData = {
       },
       period: "2022 — 2026",
       description: {
-        en: "Technical training in electronics manufacturing with a focus on automotive applications.\n\n- Soldering and rework of SMD components (0402 to 1206, ICs, electrolytic capacitors)\n- PCB design and manufacturing (EasyEDA Pro, PCBWay)\n- In parallel: vocational matriculation exam (BRP) at WIFI Niederösterreich",
-        de: "Technische Ausbildung in der Elektronikfertigung mit Schwerpunkt auf Automotive-Anwendungen.\n\n- Löten und Rework von SMD-Bauteilen (0402 bis 1206, ICs, Elektrolytkondensatoren)\n- PCB-Design und Fertigung (EasyEDA Pro, PCBWay)\n- Parallel: Berufsreifeprüfung (BRP) am WIFI Niederösterreich",
+        en: "Technical training in electronics manufacturing with a focus on automotive applications.\n\n- Soldering and rework of SMD components (0402 to 1206, ICs, electrolytic capacitors)\n- PCB design and manufacturing (EasyEDA Pro, PCBWay)\n- In parallel: vocational matriculation exam (BRP), WIFI Niederösterreich",
+        de: "Technische Ausbildung in der Elektronikfertigung mit Schwerpunkt auf Automotive-Anwendungen.\n\n- Löten und Rework von SMD-Bauteilen (0402 bis 1206, ICs, Elektrolytkondensatoren)\n- PCB-Design und Fertigung (EasyEDA Pro, PCBWay)\n- Parallel: Berufsreifeprüfung (BRP), WIFI Niederösterreich",
       },
     },
   ],
