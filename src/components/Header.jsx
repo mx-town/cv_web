@@ -30,10 +30,7 @@ export function Header({ data, showPdf }) {
     <header className="animate-fade-in-up">
       {/* Top bar */}
       <div className="flex items-center justify-between mb-10 no-print">
-        <div className="flex items-center gap-2 text-text-muted">
-          <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="font-mono text-xs tracking-wide">{t("availableForWork")}</span>
-        </div>
+        <div />
         <div className="flex items-center gap-2">
           <LocaleToggle />
           <ThemeToggle />
