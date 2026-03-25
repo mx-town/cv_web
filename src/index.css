@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border-color);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+
+  --animate-fade-in-up: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-scale-in: scale-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-slide-left: slide-left 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Dark theme (default) ── */
+:root,
+[data-theme="dark"] {
+  --bg: #09090b;
+  --surface: #151518;
+  --surface-hover: #1e1e23;
+  --border-color: #27272a;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #22d3ee;
+  --accent-muted: rgba(34, 211, 238, 0.1);
+  --glow: rgba(34, 211, 238, 0.15);
+  --gradient-from: #22d3ee;
+  --gradient-to: #a78bfa;
+  color-scheme: dark;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f5;
+  --border-color: #e4e4e7;
+  --text: #09090b;
+  --text-muted: #71717a;
+  --accent: #0891b2;
+  --accent-muted: rgba(8, 145, 178, 0.08);
+  --glow: rgba(8, 145, 178, 0.1);
+  --gradient-from: #0891b2;
+  --gradient-to: #7c3aed;
+  color-scheme: light;
+}
+
+/* ── Base ── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  img {
+    display: initial;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+}
+
+/* ── Animations ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--glow); }
+  50% { box-shadow: 0 0 20px 4px var(--glow); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Scroll-triggered animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.2s; }
+.stagger-5 { transition-delay: 0.25s; }
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow effects ── */
+.glow-accent {
+  box-shadow: 0 0 24px -4px var(--glow), 0 0 64px -12px var(--glow);
+}
+
+.glow-accent-sm {
+  box-shadow: 0 0 12px -2px var(--glow);
+}
+
+/* ── Shimmer skeleton ── */
+.shimmer {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-hover) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Print / PDF styles ── */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  /* Reset everything disruptive */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  .no-print,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Force black & white */
+  :root {
+    --bg: #fff !important;
+    --surface: #fff !important;
+    --surface-hover: #fff !important;
+    --border-color: #d4d4d4 !important;
+    --text: #000 !important;
+    --text-muted: #444 !important;
+    --accent: #000 !important;
+    --accent-muted: rgba(0, 0, 0, 0.04) !important;
+    --glow: transparent !important;
+    --gradient-from: #000 !important;
+    --gradient-to: #000 !important;
+    color-scheme: light !important;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Visibility */
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .gradient-text {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+  }
+
+  /* ── Layout ── */
+  #cv-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .space-y-16 > * + * {
+    margin-top: 10pt !important;
+  }
+
+  /* ── Header ── */
+  header h1 {
+    font-size: 18pt !important;
+    margin-bottom: 1pt !important;
+    line-height: 1.15 !important;
+  }
+
+  header .mb-10 { margin-bottom: 4pt !important; }
+  header .mb-6  { margin-bottom: 3pt !important; }
+  header .mb-5  { margin-bottom: 2pt !important; }
+  header .mb-8  { margin-bottom: 4pt !important; }
+
+  header .font-mono.text-sm {
+    font-size: 8pt !important;
+  }
+
+  /* Contact row */
+  header .flex-wrap {
+    gap: 4pt !important;
+  }
+
+  header .flex-wrap a {
+    font-size: 7pt !important;
+    height: auto !important;
+    padding: 1.5pt 5pt !important;
+    border-radius: 2pt !important;
+  }
+
+  header .flex-wrap a svg {
+    width: 8pt !important;
+    height: 8pt !important;
+  }
+
+  header .flex-wrap a .opacity-0 {
+    display: none !important;
+  }
+
+  /* Bio */
+  header .markdown-content {
+    font-size: 8pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ── Section headings ── */
+  .print-section-title {
+    font-size: 7.5pt !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    border-bottom: 0.5pt solid #000 !important;
+    padding-bottom: 2pt !important;
+    margin-bottom: 6pt !important;
+    font-family: var(--font-mono) !important;
+  }
+
+  /* Hide icon boxes in section headings */
+  section .w-8.h-8 {
+    display: none !important;
+  }
+
+  /* Section heading container */
+  section .mb-8 {
+    margin-bottom: 5pt !important;
+  }
+
+  section h2 {
+    font-size: 7.5pt !important;
+  }
+
+  /* The gradient line in section heading */
+  section .h-px {
+    display: none !important;
+  }
+
+  /* ── Experience ── */
+  /* Remove timeline line + dot */
+  section .bg-gradient-to-b { display: none !important; }
+  section .rounded-full.bg-accent.ring-4 { display: none !important; }
+
+  /* Remove left padding from timeline layout */
+  section .pl-8 {
+    padding-left: 0 !important;
+    padding-bottom: 6pt !important;
+  }
+
+  section .pl-8:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  /* Experience card — flat */
+  section .rounded-xl.border-transparent {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  section .rounded-xl.border-transparent h3 {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+  }
+
+  section .rounded-xl.border-transparent .text-accent.text-sm {
+    font-size: 8pt !important;
+  }
+
+  section .rounded-xl.border-transparent .mb-3 {
+    margin-bottom: 2pt !important;
+  }
+
+  /* Period pill — plain text */
+  .rounded-md.bg-surface.border {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    font-size: 7pt !important;
+    color: #666 !important;
+  }
+
+  /* Location */
+  section .text-text-muted.text-xs.mb-3.font-mono {
+    font-size: 7pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  /* ── Education — flat ── */
+  section .rounded-xl.border-border.bg-surface\/50 {
+    padding: 3pt 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  section .rounded-xl.border-border.bg-surface\/50 h3 {
+    font-size: 9pt !important;
+  }
+
+  section .rounded-xl.border-border.bg-surface\/50 .mt-3 {
+    margin-top: 1pt !important;
+    font-size: 7.5pt !important;
+  }
+
+  /* Education period pill */
+  section .rounded-md.bg-bg.border-border {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    font-size: 7pt !important;
+    color: #666 !important;
+  }
+
+  /* ── Skills ── */
+  section .grid.sm\:grid-cols-2.gap-6 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4pt 12pt !important;
+  }
+
+  section .space-y-3 > * + * {
+    margin-top: 2pt !important;
+  }
+
+  section .space-y-3 h3 {
+    font-size: 6.5pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  /* Category dot */
+  section .w-1\.5.h-1\.5 {
+    width: 3pt !important;
+    height: 3pt !important;
+  }
+
+  /* Skill badges — tight pills */
+  section .flex-wrap.gap-2 {
+    gap: 2pt !important;
+  }
+
+  section .flex-wrap .rounded-lg {
+    font-size: 6.5pt !important;
+    padding: 0.5pt 4pt !important;
+    border-radius: 1.5pt !important;
+    line-height: 1.4 !important;
+    border-color: #999 !important;
+    color: #333 !important;
+    background: transparent !important;
+  }
+
+  /* Projects section hidden via .print-hide class on the component */
+
+  /* ── Markdown ── */
+  .markdown-content {
+    font-size: 7.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .markdown-content p {
+    margin-bottom: 1pt !important;
+  }
+
+  .markdown-content ul {
+    margin-top: 1pt !important;
+    margin-bottom: 1pt !important;
+  }
+
+  .markdown-content li {
+    margin-bottom: 0.5pt !important;
+    padding-left: 8pt !important;
+    font-size: 7.5pt !important;
+  }
+
+  .markdown-content li::before {
+    font-size: 6pt !important;
+    color: #000 !important;
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 8pt !important;
+    padding-top: 4pt !important;
+    border-top: 0.5pt solid #d4d4d4 !important;
+  }
+
+  footer p {
+    font-size: 6pt !important;
+  }
+
+  /* Page breaks */
+  h1, h2, h3 { break-after: avoid; }
+  section { break-inside: avoid; }
+
+  /* No URL appending */
+  a[href]::after { content: none !important; }
+}
+
+/* ── Markdown content ── */
+.markdown-content p {
+  margin-bottom: 0.5em;
+}
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+.markdown-content strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.markdown-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+.markdown-content a:hover {
+  opacity: 0.8;
+  border-color: transparent;
+}
+.markdown-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.35em;
+}
+.markdown-content li {
+  margin-bottom: 0.3em;
+  padding-left: 1.25em;
+  position: relative;
+}
+.markdown-content li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  font-weight: 600;
+  top: 0.15em;
+}
