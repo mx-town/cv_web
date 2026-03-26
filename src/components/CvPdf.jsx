@@ -14,8 +14,10 @@ const s = {
     lineHeight: 1.4,
     color: "#111",
     background: "#fff",
-    padding: "20mm 28mm",
+    padding: "24mm 30mm",
     width: "210mm",
+    maxHeight: "297mm",
+    overflow: "hidden",
     boxSizing: "border-box",
   },
 
@@ -60,8 +62,8 @@ const s = {
     color: "#333",
     borderBottom: "0.5px solid #ccc",
     paddingBottom: "3px",
-    marginTop: "14px",
-    marginBottom: "7px",
+    marginTop: "22px",
+    marginBottom: "9px",
   },
 
   /* Entry row: company/degree + period */
@@ -107,7 +109,7 @@ const s = {
 
   /* Project entries */
   projectBlock: {
-    marginBottom: "5px",
+    marginBottom: "8px",
   },
   projectName: {
     fontFamily: sans,
@@ -129,7 +131,7 @@ const s = {
     fontSize: "8.5pt",
     lineHeight: 1.35,
     color: "#333",
-    marginBottom: "2px",
+    marginBottom: "4px",
   },
   skillCategory: {
     fontFamily: sans,
@@ -151,7 +153,7 @@ const s = {
 
   /* Spacing between entries */
   entryBlock: {
-    marginBottom: "8px",
+    marginBottom: "12px",
   },
 }
 
@@ -185,6 +187,13 @@ const shortSkillCategory = {
   "KI & agentische Softwareentwicklung": "KI",
 }
 
+/** Override skill items for PDF to keep lines short */
+const pdfSkillItems = {
+  "Hardware": ["EasyEDA Pro", "KiCad", "Arduino IDE", "Löten & Nacharbeit", "SMT/THT"],
+  "Manufacturing": ["TIA Portal (Siemens)", "FluidSim", "SMT-Prozesse", "Reflow / SPI / AOI"],
+  "Fertigung": ["TIA Portal (Siemens)", "FluidSim", "SMT-Prozesse", "Reflow / SPI / AOI"],
+}
+
 /** Extract first line (intro sentence) from description, strip markdown */
 function firstSentence(text) {
   if (!text) return ""
@@ -209,7 +218,8 @@ export const CvPdf = forwardRef(function CvPdf({ locale }, ref) {
       <p style={s.contactLine}>
         {l(personal.location)}
         {personal.contact.email && ` · ${personal.contact.email}`}
-            </p>
+        {personal.contact.github && ` · github.com/niki-mtown`}
+      </p>
 
       {/* ── Experience ── */}
       <h2 style={s.sectionTitle}>{spaceOut(t.experience)}</h2>
@@ -231,7 +241,7 @@ export const CvPdf = forwardRef(function CvPdf({ locale }, ref) {
       {/* ── Education ── */}
       <h2 style={s.sectionTitle}>{spaceOut(t.education)}</h2>
       {education.map((edu, i) => (
-        <div key={i} style={{ marginBottom: "5px" }}>
+        <div key={i} style={{ marginBottom: "10px" }}>
           <div style={s.entryHeader}>
             <h3 style={s.entryTitle}>{l(edu.degree)}</h3>
             <span style={s.period}>{l(edu.period)}</span>
@@ -254,10 +264,11 @@ export const CvPdf = forwardRef(function CvPdf({ locale }, ref) {
       {skills.map((group, i) => {
         const catName = l(group.category)
         const shortName = shortSkillCategory[catName] || catName
+        const items = pdfSkillItems[shortName] || group.items.map((item) => l(item))
         return (
           <p key={i} style={s.skillLine}>
             <span style={s.skillCategory}>{shortName}</span>
-            <span style={s.skillItems}> — {group.items.map((item) => l(item)).join(", ")}</span>
+            <span style={s.skillItems}> — {items.join(", ")}</span>
           </p>
         )
       })}
