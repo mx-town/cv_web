@@ -26,8 +26,8 @@ export function Skills({ data }) {
                   key={typeof skill === "string" ? skill : j}
                   className={cn(
                     "inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium",
-                    "border border-accent/20 bg-accent-muted text-accent",
-                    "hover:border-accent/40 hover:bg-accent-muted transition-all duration-200",
+                    "border border-border bg-surface text-text-muted",
+                    "hover:border-text-subtle transition-all duration-200",
                     "cursor-default"
                   )}
                 >

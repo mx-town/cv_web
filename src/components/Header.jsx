@@ -58,7 +58,7 @@ export function Header({ data, showPdf }) {
       {/* Location */}
       {location && (
         <div className="flex items-center gap-1.5 text-text-muted text-sm mb-5">
-          <MapPin className="w-3.5 h-3.5 text-accent/60" />
+          <MapPin className="w-3.5 h-3.5 text-warm-lo" />
           <span>{localize(location, locale)}</span>
         </div>
       )}

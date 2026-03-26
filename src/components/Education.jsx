@@ -17,7 +17,7 @@ export function Education({ data }) {
         {data.map((item, i) => (
           <div
             key={i}
-            className="group rounded-xl border border-border bg-surface/50 p-5 hover:border-accent/30 hover:bg-surface transition-all duration-300"
+            className="group rounded-xl border border-border bg-surface/50 p-5 hover:border-text-subtle hover:bg-surface transition-all duration-300"
           >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
               <div>

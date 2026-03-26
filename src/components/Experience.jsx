@@ -15,7 +15,7 @@ function ExperienceItem({ item, index, locale }) {
       className={`animate-on-scroll stagger-${index + 1} relative pl-8 pb-10 last:pb-0 group`}
     >
       {/* Timeline line */}
-      <div className="absolute left-[3px] top-3 bottom-0 w-px bg-gradient-to-b from-accent/30 to-transparent group-last:hidden" />
+      <div className="absolute left-[3px] top-3 bottom-0 w-px bg-gradient-to-b from-border to-transparent group-last:hidden" />
       {/* Timeline dot */}
       <div className="absolute left-0 top-[10px] w-[7px] h-[7px] rounded-full bg-accent ring-4 ring-accent-muted" />
 

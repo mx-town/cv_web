@@ -8,7 +8,7 @@ export function SectionHeading({ icon: Icon, title, className }) {
           <Icon className="w-4 h-4 text-accent" />
         </div>
       )}
-      <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+      <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
         {title}
       </h2>
       <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />

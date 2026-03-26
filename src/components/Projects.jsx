@@ -11,12 +11,12 @@ function ProjectCard({ project, locale }) {
     <div
       className={cn(
         "group rounded-xl border border-border bg-surface/50 p-5",
-        "hover:border-accent/30 hover:bg-surface transition-all duration-300"
+        "hover:border-text-subtle hover:bg-surface transition-all duration-300"
       )}
     >
       <div className="flex items-start justify-between gap-2 mb-2">
         <div className="flex items-center gap-2">
-          <FolderGit2 className="w-4 h-4 text-accent/60 shrink-0" />
+          <FolderGit2 className="w-4 h-4 text-text-subtle shrink-0" />
           <h3 className="font-semibold text-sm">{localize(project.name, locale)}</h3>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -45,7 +45,7 @@ function ProjectCard({ project, locale }) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border border-accent/20 bg-accent-muted text-accent"
+              className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border border-border bg-surface text-text-muted"
             >
               {t}
             </span>

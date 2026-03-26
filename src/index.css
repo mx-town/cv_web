@@ -11,8 +11,11 @@
   --color-border: var(--border-color);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);
+  --color-warm-hi: var(--warm-hi);
+  --color-warm-lo: var(--warm-lo);
 
   --animate-fade-in-up: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-fade-in: fade-in 0.4s ease-out both;
@@ -29,11 +32,7 @@
   --border-color: #27272a;
   --text: #fafafa;
   --text-muted: #a1a1aa;
-  --accent: #22d3ee;
-  --accent-muted: rgba(34, 211, 238, 0.1);
-  --glow: rgba(34, 211, 238, 0.15);
-  --gradient-from: #22d3ee;
-  --gradient-to: #a78bfa;
+  --text-subtle: #52525b;
   color-scheme: dark;
 }
 
@@ -43,14 +42,104 @@
   --surface: #ffffff;
   --surface-hover: #f4f4f5;
   --border-color: #e4e4e7;
-  --text: #09090b;
-  --text-muted: #71717a;
-  --accent: #0891b2;
-  --accent-muted: rgba(8, 145, 178, 0.08);
-  --glow: rgba(8, 145, 178, 0.1);
-  --gradient-from: #0891b2;
-  --gradient-to: #7c3aed;
+  --text: #18181b;
+  --text-muted: #52525b;
+  --text-subtle: #a1a1aa;
   color-scheme: light;
+}
+
+/* ── Color schemes (dark defaults, light overrides via JS) ── */
+[data-accent="warm"] {
+  --warm-hi: #E4D5B4;
+  --accent: #D2B48C;
+  --warm-lo: #9D825D;
+  --accent-muted: rgba(210, 180, 140, 0.1);
+  --glow: rgba(210, 180, 140, 0.12);
+}
+[data-accent="warm-light"] {
+  --warm-hi: #4a3520;
+  --accent: #674F2D;
+  --warm-lo: #7a6040;
+  --accent-muted: rgba(103, 79, 45, 0.08);
+  --glow: rgba(103, 79, 45, 0.08);
+}
+
+[data-accent="slate"] {
+  --warm-hi: #c8d6e5;
+  --accent: #8fa8c2;
+  --warm-lo: #5e7d99;
+  --accent-muted: rgba(143, 168, 194, 0.1);
+  --glow: rgba(143, 168, 194, 0.12);
+}
+[data-accent="slate-light"] {
+  --warm-hi: #1a2a3a;
+  --accent: #2d4a6b;
+  --warm-lo: #4a6a89;
+  --accent-muted: rgba(45, 74, 107, 0.08);
+  --glow: rgba(45, 74, 107, 0.08);
+}
+
+[data-accent="wine"] {
+  --warm-hi: #e8b4bf;
+  --accent: #c4748a;
+  --warm-lo: #9a5f72;
+  --accent-muted: rgba(196, 116, 138, 0.1);
+  --glow: rgba(196, 116, 138, 0.12);
+}
+[data-accent="wine-light"] {
+  --warm-hi: #4a1525;
+  --accent: #7a2040;
+  --warm-lo: #8a4058;
+  --accent-muted: rgba(122, 32, 64, 0.08);
+  --glow: rgba(122, 32, 64, 0.08);
+}
+
+/* Scheme D — Forest Green */
+[data-accent="forest"] {
+  --warm-hi: #a3d9b1;
+  --accent: #6bb888;
+  --warm-lo: #4a9068;
+  --accent-muted: rgba(107, 184, 136, 0.1);
+  --glow: rgba(107, 184, 136, 0.12);
+}
+[data-accent="forest-light"] {
+  --warm-hi: #14432a;
+  --accent: #166534;
+  --warm-lo: #15803d;
+  --accent-muted: rgba(22, 101, 52, 0.08);
+  --glow: rgba(22, 101, 52, 0.08);
+}
+
+/* Scheme E — Mono (no color, pure typography) */
+[data-accent="mono"] {
+  --warm-hi: #e4e4e7;
+  --accent: #a1a1aa;
+  --warm-lo: #71717a;
+  --accent-muted: rgba(161, 161, 170, 0.1);
+  --glow: rgba(161, 161, 170, 0.08);
+}
+[data-accent="mono-light"] {
+  --warm-hi: #18181b;
+  --accent: #3f3f46;
+  --warm-lo: #71717a;
+  --accent-muted: rgba(63, 63, 70, 0.08);
+  --glow: rgba(63, 63, 70, 0.06);
+}
+
+/* Scheme F — Copper / Terracotta */
+[data-accent="copper"] {
+  --warm-hi: #f0b090;
+  --accent: #c87850;
+  --warm-lo: #b07050;
+  --accent-muted: rgba(200, 120, 80, 0.1);
+  --glow: rgba(200, 120, 80, 0.12);
+}
+[data-accent="copper-light"] {
+  --warm-hi: #3a1a08;
+  --accent: #7c3a12;
+  --warm-lo: #9a5230;
+  --accent-muted: rgba(124, 58, 18, 0.08);
+  --glow: rgba(124, 58, 18, 0.08);
 }
 
 /* ── Base ── */
@@ -153,12 +242,9 @@
 .stagger-4 { transition-delay: 0.2s; }
 .stagger-5 { transition-delay: 0.25s; }
 
-/* ── Gradient text ── */
+/* ── Name highlight ── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-warm-hi);
 }
 
 /* ── Glow effects ── */
@@ -209,8 +295,6 @@
     --accent: #000 !important;
     --accent-muted: rgba(0, 0, 0, 0.04) !important;
     --glow: transparent !important;
-    --gradient-from: #000 !important;
-    --gradient-to: #000 !important;
     color-scheme: light !important;
   }
 
@@ -230,9 +314,6 @@
   }
 
   .gradient-text {
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: #000 !important;
     color: #000 !important;
   }
 

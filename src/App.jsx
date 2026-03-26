@@ -14,14 +14,6 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-bg relative">
-      {/* Subtle background gradient orb */}
-      <div
-        className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none opacity-30 print-hide"
-        style={{
-          background: "radial-gradient(ellipse at center, var(--accent-muted) 0%, transparent 70%)",
-        }}
-      />
-
       <div
         id="cv-content"
         className="relative max-w-3xl mx-auto px-5 sm:px-8 py-16 sm:py-20"
