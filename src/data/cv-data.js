@@ -17,7 +17,7 @@ export const cvData = {
     contact: {
       email: "niklasmartinek@gmail.com",
       phone: "",
-      github: "https://github.com/mx-town",
+      github: "https://github.com/niki-mtown",
       linkedin: "",
     },
   },
@@ -68,12 +68,12 @@ export const cvData = {
         de: "Lehre mit Matura, begleitend zur Berufsausbildung. Fächer: Elektrotechnik, Deutsch, Englisch und Mathematik. Aktuell im Abschluss.",
       },
     },
-    {
-      institution: "Siemens / MELECS EWS GmbH",
-      degree: {
-  en: "University Entrance Exam (Matura)",
-  de: "Berufsreifeprüfung (Matura)",
-},
+   {
+  institution: "Siemens / MELECS EWS GmbH",
+  degree: {
+    en: "Apprenticeship Diploma — Mechatronics & Automation Technician",
+    de: "Lehrabschluss — Mechatroniker-Automatisierungstechniker",
+  },
       period: "2022 — 2026",
       description: {
         en: "Vocational training with a focus on automotive electronics manufacturing.",
@@ -125,8 +125,7 @@ export const cvData = {
       period: "2025",
       description: {
         en: "Fully self-built physical roulette machine:\n- 37-LED matrix with GPIO multiplexing\n- Flask web interface with REST API\n- WiFi access point for mobile players\n- **3D-printed enclosure**\n- Complete development from circuit design to finished product",
-        de: "Komplett selbst gebaute Roulette-System:\n- 37-LED-Matrix mit GPIO-Multiplexing\n- Flask-Weboberfläche mit REST API\n- Eigener WLAN-Hotspot für Mitspieler\n- **3D-gedrucktes Gehäuse**\n- Von der Schaltung bis zum fertigen Gerät alles Eigenentwicklung",
-      },
+de: "Roulette-Gerät in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing\n- Flask-Weboberfläche mit REST API\n- Eigener WLAN-Hotspot für Mitspieler\n- **3D-gedrucktes Gehäuse**\n- Von der Schaltung bis zum fertigen Gerät alles selbst umgesetzt",      },
       tech: ["Raspberry Pi", "Python", "Flask", "pigpio", "3D Printing"],
       github: "https://github.com/mx-town/rpi-roulette",
     },
