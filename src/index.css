@@ -263,6 +263,34 @@
   animation: shimmer 1.5s infinite;
 }
 
+/* ── Flip Cards ── */
+.flip-card { perspective: 1200px; }
+
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-front, .flip-card-back {
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: 0.75rem; overflow: hidden;
+}
+
+.flip-card-front {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.flip-card:not(.flipped):hover .flip-card-front {
+  box-shadow: 0 0 12px -2px var(--glow);
+  border-color: var(--accent);
+}
+
+.flip-card-back { transform: rotateY(180deg); }
+
 /* ── Print / PDF styles ── */
 @media print {
   @page {

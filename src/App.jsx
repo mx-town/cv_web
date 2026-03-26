@@ -23,9 +23,9 @@ function AppContent() {
 
           {settings.showExperience && <Experience data={experience} />}
           {settings.showEducation && <Education data={education} />}
+          {settings.showProjects && <Projects projects={projects} />}
           {settings.showSkills && <Skills data={skills} />}
           {languages?.length > 0 && <Languages data={languages} />}
-          {settings.showProjects && <Projects projects={projects} />}
           {github?.username && <GithubRepos githubConfig={github} />}
         </div>
 
