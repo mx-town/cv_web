@@ -62,7 +62,7 @@ function FlipCard({ project, locale, onImageClick }) {
 
   return (
     <div
-      className={cn("flip-card h-56 sm:h-56 cursor-pointer", flipped && "flipped")}
+      className={cn("flip-card h-72 sm:h-56 cursor-pointer", flipped && "flipped")}
       onClick={toggle}
       onKeyDown={handleKey}
       role="button"
@@ -74,7 +74,7 @@ function FlipCard({ project, locale, onImageClick }) {
           {/* Image section */}
           {hasImage ? (
             <div
-              className="relative h-32 sm:h-full sm:w-[55%] shrink-0 cursor-zoom-in"
+              className="relative aspect-video sm:aspect-auto sm:h-full sm:w-[55%] shrink-0 cursor-zoom-in"
               onClick={(e) => { e.stopPropagation(); onImageClick(project.image) }}
             >
               <img
@@ -84,25 +84,25 @@ function FlipCard({ project, locale, onImageClick }) {
               />
             </div>
           ) : (
-            <div className="relative h-32 sm:h-full sm:w-[55%] shrink-0 bg-gradient-to-br from-accent-muted via-surface to-surface-hover" />
+            <div className="relative aspect-video sm:aspect-auto sm:h-full sm:w-[55%] shrink-0 bg-gradient-to-br from-accent-muted via-surface to-surface-hover" />
           )}
 
           {/* Info section */}
-          <div className="flex flex-col justify-center flex-1 px-5 py-3 sm:py-0">
-            <h3 className="font-semibold text-sm sm:text-base mb-1">{name}</h3>
+          <div className="flex flex-col justify-center flex-1 px-4 sm:px-5 py-3 sm:py-0">
+            <h3 className="font-semibold text-base sm:text-base mb-1">{name}</h3>
             <span className="text-text-muted text-xs font-mono">
               {localize(project.period, locale)}
             </span>
           </div>
 
           {/* Flip hint */}
-          <div className="absolute top-3 right-3 text-text-muted opacity-60">
-            <RotateCcw className="w-4 h-4" />
+          <div className="absolute top-3 right-3 text-text-muted opacity-60 p-1">
+            <RotateCcw className="w-6 h-6 sm:w-4 sm:h-4" />
           </div>
         </div>
 
         {/* ── Back ── */}
-        <div className="flip-card-back border border-border bg-surface flex flex-col p-5">
+        <div className="flip-card-back border border-border bg-surface flex flex-col p-4 sm:p-5">
           {/* Header */}
           <div className="flex items-start justify-between gap-2 mb-2">
             <div>
@@ -116,7 +116,7 @@ function FlipCard({ project, locale, onImageClick }) {
               className="text-text-muted hover:text-accent transition-colors shrink-0"
               aria-label="Flip back"
             >
-              <RotateCcw className="w-4 h-4" />
+              <RotateCcw className="w-6 h-6 sm:w-4 sm:h-4" />
             </button>
           </div>
 
@@ -172,7 +172,7 @@ export function Projects({ projects }) {
   return (
     <section ref={ref} className="animate-on-scroll print-hide">
       <SectionHeading icon={FolderGit2} title={t("projects")} />
-      <div className="grid gap-4">
+      <div className="grid gap-6 sm:gap-4">
         {projects.map((project, i) => (
           <FlipCard
             key={localize(project.name, locale) || i}
