@@ -92,7 +92,7 @@ export const cvData = {
         de: "Desktop-App auf Electron-Basis für Korg Electribe Synthesizer (ESX-1, E2S, EMX-1):\n- Sample-Manager zum Importieren & Verwalten\n- 18 DSP-Effekte über die **Web Audio API**\n- Pattern-Viewer im Stil der Original-Hardware\n- **240 automatisierte Tests** mit Vitest",
       },
       tech: ["Electron", "JavaScript", "Web Audio API", "Vitest"],
-      github: "https://github.com/mx-town/korg-manager",
+      github: "https://github.com/mx-town/Korg_Manager",
     },
     {
       name: "Trainings-PCB (SMT + THT)",
