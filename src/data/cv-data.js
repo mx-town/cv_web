@@ -11,8 +11,8 @@ export const cvData = {
     },
     avatar: "",
     bio: {
-      en: "Hardware developer with hands-on experience in **automotive electronics manufacturing — from bare PCB to finished product**. I design custom PCBs using EasyEDA Pro, develop embedded systems with Arduino and Raspberry Pi, and build web-based tools with Next.js, Electron, and Flask.\n\nCurrently completing my **Matura in Electrical Engineering** and preparing for a degree in **Embedded & Cyber-Physical Systems** at FH Technikum Wien.",
-      de: "Hardwareentwickler mit Praxiserfahrung in der **Automotive-Elektronikfertigung — von der Rohplatine bis zum Endprodukt**. Ich entwerfe eigene Leiterplatten in EasyEDA Pro, baue Embedded-Systeme mit Arduino und Raspberry Pi und entwickle webbasierte Tools mit Next.js, Electron und Flask.\n\nDerzeit schließe ich meine **Matura in Elektrotechnik** ab und bereite mich auf das Studium **Embedded & Cyber-Physical Systems** an der FH Technikum Wien vor.",
+      en: "Hardware developer with hands-on experience in **automotive electronics manufacturing — from bare PCB to finished product**. I design custom PCBs using EasyEDA Pro, build embedded systems with Arduino and Raspberry Pi, and use modern AI-assisted development workflows to create web-based tools and desktop applications.\n\nCurrently completing my **Matura in Electrical Engineering** and preparing for a degree in **Embedded & Cyber-Physical Systems** at FH Technikum Wien.",
+      de: "Hardwareentwickler mit Praxiserfahrung in der **Automotive-Elektronikfertigung — von der Rohplatine bis zum Endprodukt**. Ich entwerfe eigene Leiterplatten in EasyEDA Pro, baue Embedded-Systeme mit Arduino und Raspberry Pi und nutze KI-gestützte Entwicklungsworkflows für Web-Apps und Desktop-Anwendungen.\n\nDerzeit schließe ich meine **Matura in Elektrotechnik** ab und bereite mich auf das Studium **Embedded & Cyber-Physical Systems** an der FH Technikum Wien vor.",
     },
     contact: {
       email: "niklasmartinek@gmail.com",
@@ -34,8 +34,8 @@ export const cvData = {
         de: "März 2026 — Heute",
       },
       description: {
-        en: "Working in automotive electronics manufacturing at a leading supplier.\n\n- Transitioning into **hardware development** starting May 2026 (PCB design, automotive standards)\n- Knowledge of the complete SMT manufacturing process: laser traceability, screen printing, reflow soldering, SPI, AOI, THT assembly through to finished product\n- Personal projects alongside work: **Raspberry Pi Roulette** with LED matrix, Flask web UI and 3D-printed enclosure; **Fintrackr** finance app built with Next.js; **Korg Manager** desktop application built with Electron",
-        de: "Automotive-Elektronikfertigung bei einem führenden Zulieferer.\n\n- Ab Mai 2026 Wechsel in die **Hardwareentwicklung** (Leiterplattendesign, Automotive-Normen)\n- Erfahrung mit dem gesamten SMT-Prozess: Laser-Traceability, Pastendruck, Reflowlöten, SPI, AOI, THT-Bestückung bis zum Endprodukt\n- Eigene Projekte nebenbei: **Raspberry Pi Roulette** mit LED-Matrix, Flask-Weboberfläche und 3D-Druck-Gehäuse; **Fintrackr** Finanz-App mit Next.js; **Korg Manager** Desktop-App mit Electron",
+        en: "Working in automotive electronics manufacturing at a leading supplier.\n\n- Transitioning into **hardware development** starting May 2026 (PCB design, automotive standards)\n- Knowledge of the complete SMT manufacturing process: laser traceability, screen printing, reflow soldering, SPI, AOI, THT assembly through to finished product\n- Personal projects using AI-assisted development: **Raspberry Pi Roulette** with LED matrix, Flask web UI and 3D-printed enclosure; **Fintrackr** finance app with Next.js; **Korg Manager** desktop app with Electron",
+        de: "Automotive-Elektronikfertigung bei einem führenden Zulieferer.\n\n- Ab Mai 2026 Wechsel in die **Hardwareentwicklung** (Leiterplattendesign, Automotive-Normen)\n- Erfahrung mit dem gesamten SMT-Prozess: Laser-Traceability, Pastendruck, Reflowlöten, SPI, AOI, THT-Bestückung bis zum Endprodukt\n- Eigene Projekte mit KI-gestützter Entwicklung: **Raspberry Pi Roulette** mit LED-Matrix, Flask-Weboberfläche und 3D-Druck-Gehäuse; **Fintrackr** Finanz-App mit Next.js; **Korg Manager** Desktop-App mit Electron",
       },
     },
     {
@@ -68,12 +68,12 @@ export const cvData = {
         de: "Lehre mit Matura, begleitend zur Berufsausbildung. Fächer: Elektrotechnik, Deutsch, Englisch und Mathematik. Aktuell im Abschluss.",
       },
     },
-   {
-  institution: "Siemens / MELECS EWS GmbH",
-  degree: {
-    en: "Apprenticeship Diploma — Mechatronics & Automation Technician",
-    de: "Lehrabschluss — Mechatroniker-Automatisierungstechniker",
-  },
+    {
+      institution: "Siemens / MELECS EWS GmbH",
+      degree: {
+        en: "Apprenticeship Diploma — Mechatronics & Automation Technician",
+        de: "Lehrabschluss — Mechatroniker-Automatisierungstechniker",
+      },
       period: "2022 — 2026",
       description: {
         en: "Vocational training with a focus on automotive electronics manufacturing.",
@@ -87,10 +87,10 @@ export const cvData = {
       name: "Korg Manager",
       image: "/images/Korg-manager.png",
       period: "2025 — Present",
-      description: {
-        en: "Electron-based desktop app for Korg Electribe synthesizers (ESX-1, E2S, EMX-1):\n- Sample manager for importing & organizing sounds\n- 18 DSP effects with **Web Audio API** playback\n- Pattern viewer styled after original hardware\n- **240 automated tests** with Vitest",
-        de: "Desktop-App auf Electron-Basis für Korg Electribe Synthesizer (ESX-1, E2S, EMX-1):\n- Sample-Manager zum Importieren & Verwalten\n- 18 DSP-Effekte über die **Web Audio API**\n- Pattern-Viewer im Stil der Original-Hardware\n- **240 automatisierte Tests** mit Vitest",
-      },
+ description: {
+  en: "Electron desktop app for Korg Electribe (ESX-1, E2S, EMX-1):\n- Sample manager with **Web Audio API** playback\n- Pattern viewer styled after original hardware\n- **240 automated tests** with Vitest",
+  de: "Electron Desktop-App für Korg Electribe (ESX-1, E2S, EMX-1):\n- Sample-Manager mit **Web Audio API** Wiedergabe\n- Pattern-Viewer im Stil der Original-Hardware\n- **240 automatisierte Tests** mit Vitest",
+},
       tech: ["Electron", "JavaScript", "Web Audio API", "Vitest"],
       github: "https://github.com/mx-town/Korg_Manager",
     },
@@ -98,10 +98,10 @@ export const cvData = {
       name: "Trainings-PCB (SMT + THT)",
       image: "/images/PCB.png",
       period: "2025",
-      description: {
-        en: "Self-designed training board for soldering & rework exercises:\n- Developed in **EasyEDA Pro**, manufactured by PCBWay\n- SMD components (0402–1206), ICs, capacitors, diodes, transistors\n- THT components for through-hole practice\n- Two variants: with and without solder paste",
-        de: "Selbst entworfene Übungsplatine für Löt- und Nacharbeitsübungen:\n- Entwickelt in **EasyEDA Pro**, gefertigt bei PCBWay\n- SMD-Bauteile (0402–1206), ICs, Elkos, Dioden, Transistoren\n- THT-Komponenten für Durchsteckmontage\n- Zwei Varianten: mit und ohne Lötpaste",
-      },
+  description: {
+  en: "Training board for soldering & rework exercises:\n- Designed in **EasyEDA Pro**, manufactured by PCBWay\n- SMD (0402–1206), ICs, THT components\n- Two variants: with and withoout mass area",
+  de: "Übungsplatine für Löt- und Nacharbeit:\n- Entworfen in **EasyEDA Pro**, gefertigt bei PCBWay\n- SMD (0402–1206), ICs, THT-Komponenten\n- Zwei Varianten: mit und ohne Massefläche ",
+},
       tech: ["EasyEDA Pro", "PCBWay", "SMT", "THT"],
       github: "",
     },
@@ -112,10 +112,10 @@ export const cvData = {
       },
       image: "/images/tempctrl.png",
       period: "2026",
-      description: {
-        en: "Arduino Nano–based temperature controller:\n- DS18B20 & DHT22 sensors with RGB LED status display\n- Relay-driven 24V fan control\n- Custom PCB layout on perfboard\n- Browser-based **HMI dashboard** with Web Serial API\n- Live trend graph & setpoint control",
-        de: "Temperaturregelung auf Arduino-Nano-Basis:\n- DS18B20- & DHT22-Sensoren mit RGB-LED-Statusanzeige\n- Relaisgesteuerte 24V-Lüftersteuerung\n- Eigenes Layout auf Lochrasterplatine\n- **HMI-Dashboard** im Browser mit Web Serial API\n- Echtzeit-Graph & Sollwertvorgabe",
-      },
+    description: {
+  en: "Arduino Nano temperature controller:\n- DS18B20 & DHT22 sensors, relay-driven 24V fan\n- Custom perfboard layout\n- Browser **HMI dashboard** via Web Serial API",
+  de: "Temperaturregelung auf Arduino-Nano-Basis:\n- DS18B20- & DHT22-Sensoren, 24V-Lüftersteuerung\n- Eigenes Layout auf Lochrasterplatine\n- **HMI-Dashboard** im Browser via Web Serial API",
+},
       tech: ["Arduino IDE", "C++", "Web Serial API", "JavaScript", "HTML/CSS"],
       github: "https://github.com/mx-town/Arduino-temp-ctrl",
     },
@@ -123,9 +123,11 @@ export const cvData = {
       name: "Roulette — Raspberry Pi",
       image: "/images/Rouelette.png",
       period: "2025",
-      description: {
-        en: "Fully self-built physical roulette machine:\n- 37-LED matrix with GPIO multiplexing\n- Flask web interface with REST API\n- WiFi access point for mobile players\n- **3D-printed enclosure**\n- Complete development from circuit design to finished product",
-de: "Roulette-Gerät in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing\n- Flask-Weboberfläche mit REST API\n- Eigener WLAN-Hotspot für Mitspieler\n- **3D-gedrucktes Gehäuse**\n- Von der Schaltung bis zum fertigen Gerät alles selbst umgesetzt",      },
+   description: {
+  en: "Self-built physical roulette device:\n- 37-LED matrix with GPIO multiplexing\n- Flask web UI, WiFi access point\n- **3D-printed enclosure**",
+  de: "Roulette in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing\n- Flask-Weboberfläche, WLAN-Hotspot\n- **3D-gedrucktes Gehäuse**",
+},
+
       tech: ["Raspberry Pi", "Python", "Flask", "pigpio", "3D Printing"],
       github: "https://github.com/mx-town/rpi-roulette",
     },
@@ -133,10 +135,10 @@ de: "Roulette-Gerät in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing
       name: "LAP Quiz & LAP Lexikon",
       image: "/images/lap-quiz.png",
       period: "2026",
-      description: {
-        en: "Two web apps for apprenticeship exam preparation (LAP):\n- Quiz with multiple modes: exam simulation, chapter learning, blitz round\n- Structured lexicon with 10 electrical engineering categories\n- Progress tracking & score overview",
-        de: "Zwei Web-Apps zur Vorbereitung auf die Lehrabschlussprüfung (LAP):\n- Quiz mit mehreren Modi: Prüfungssimulation, Kapiteltraining, Blitzrunde\n- Nachschlagewerk mit 10 Fachkategorien der Elektrotechnik\n- Fortschrittsverfolgung & Punkteübersicht",
-      },
+description: {
+  en: "Two web apps for apprenticeship exam prep:\n- Quiz: exam simulation, chapter training, blitz round\n- Lexicon: 10 electrical engineering categories",
+  de: "Zwei Web-Apps zur LAP-Vorbereitung:\n- Quiz: Prüfungssimulation, Kapiteltraining, Blitzrunde\n- Nachschlagewerk: 10 Fachkategorien",
+},
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/mx-town/lap-quiz",
     },
@@ -144,10 +146,10 @@ de: "Roulette-Gerät in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing
       name: "Fintrackr",
       image: "/images/FinTrackr.png",
       period: "2026",
-      description: {
-        en: "Personal finance tracking web application:\n- Built with Next.js & local SQLite via Drizzle ORM\n- Offline-first — no cloud dependencies\n- Income & expense tracking with categories",
-        de: "Web-App zur persönlichen Finanzverwaltung:\n- Gebaut mit Next.js & lokaler SQLite über Drizzle ORM\n- Offline-first — keine Cloud-Anbindung\n- Einnahmen- & Ausgabenverfolgung mit Kategorien",
-      },
+   description: {
+  en: "Personal finance tracker:\n- Next.js with local SQLite via Drizzle ORM\n- Fully offline, no cloud dependencies",
+  de: "Persönliche Finanzverwaltung:\n- Next.js mit lokaler SQLite über Drizzle ORM\n- Komplett offline, keine Cloud-Anbindung",
+},
       tech: ["Next.js", "TypeScript", "Drizzle ORM", "SQLite"],
       github: "https://github.com/mx-town/Fintrackr",
     },
@@ -185,7 +187,7 @@ de: "Roulette-Gerät in Eigenentwicklung:\n- 37-LED-Matrix mit GPIO-Multiplexing
         en: "Software & Development",
         de: "Software & Entwicklung",
       },
-      items: ["VS Code", "Git / GitHub", "Electron", "Next.js", "TypeScript", "Python",],
+      items: ["VS Code", "Git / GitHub", "Electron", "Next.js", "TypeScript", "Python"],
     },
     {
       category: "Embedded",

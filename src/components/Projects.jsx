@@ -122,7 +122,7 @@ function FlipCard({ project, locale, onImageClick }) {
 
           {/* Description — scrollable */}
           {project.description && (
-            <div className="markdown-content text-text-muted text-xs leading-relaxed overflow-y-auto flex-1 min-h-0 mb-3">
+            <div className="markdown-content text-text-muted text-xs leading-relaxed overflow-hidden flex-1 min-h-0 mb-3">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {localize(project.description, locale)}
               </ReactMarkdown>
