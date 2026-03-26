@@ -218,7 +218,6 @@ export const CvPdf = forwardRef(function CvPdf({ locale }, ref) {
       <p style={s.contactLine}>
         {l(personal.location)}
         {personal.contact.email && ` · ${personal.contact.email}`}
-        {personal.contact.github && ` · github.com/niki-mtown`}
       </p>
 
       {/* ── Experience ── */}
