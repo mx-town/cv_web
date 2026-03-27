@@ -22,10 +22,10 @@ function ExperienceItem({ item, index, locale }) {
       <div className="rounded-xl border border-transparent hover:border-border hover:bg-surface/50 p-4 -ml-4 transition-all duration-300">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
           <div>
-            <h3 className="font-semibold text-[15px] leading-snug">{localize(item.role, locale)}</h3>
-            <p className="text-accent text-sm font-medium mt-0.5">{item.company}</p>
+            <h3 className="font-semibold text-[15px] md:text-base leading-snug">{localize(item.role, locale)}</h3>
+            <p className="text-accent text-sm md:text-base font-medium mt-0.5">{item.company}</p>
           </div>
-          <div className="flex items-center gap-2 text-text-muted text-xs font-mono shrink-0 mt-1 sm:mt-0">
+          <div className="flex items-center gap-2 text-text-muted text-xs md:text-sm font-mono shrink-0 mt-1 sm:mt-0">
             <span className="px-2 py-0.5 rounded-md bg-surface border border-border">
               {localize(item.period, locale)}
             </span>
@@ -33,11 +33,11 @@ function ExperienceItem({ item, index, locale }) {
         </div>
 
         {item.location && (
-          <p className="text-text-muted text-xs mb-3 font-mono">{localize(item.location, locale)}</p>
+          <p className="text-text-muted text-xs md:text-sm mb-3 font-mono">{localize(item.location, locale)}</p>
         )}
 
         {item.description && (
-          <div className="markdown-content text-text-muted text-sm leading-relaxed">
+          <div className="markdown-content text-text-muted text-sm md:text-base leading-relaxed">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{localize(item.description, locale)}</ReactMarkdown>
           </div>
         )}

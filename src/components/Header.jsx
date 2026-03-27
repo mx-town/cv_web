@@ -48,16 +48,16 @@ export function Header({ data, showPdf }) {
           />
         )}
         <div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1] mb-2">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-2">
             <span className="gradient-text">{name}</span>
           </h1>
-          <p className="font-mono text-sm text-accent tracking-wide">{localize(title, locale)}</p>
+          <p className="font-mono text-sm md:text-base text-accent tracking-wide">{localize(title, locale)}</p>
         </div>
       </div>
 
       {/* Location */}
       {location && (
-        <div className="flex items-center gap-1.5 text-text-muted text-sm mb-5">
+        <div className="flex items-center gap-1.5 text-text-muted text-sm md:text-base mb-5">
           <MapPin className="w-3.5 h-3.5 text-warm-lo" />
           <span>{localize(location, locale)}</span>
         </div>
@@ -65,7 +65,7 @@ export function Header({ data, showPdf }) {
 
       {/* Bio */}
       {bio && (
-        <div className="markdown-content text-text-muted text-[15px] leading-relaxed mb-8 max-w-2xl">
+        <div className="markdown-content text-text-muted text-[15px] md:text-base leading-relaxed mb-8 max-w-2xl">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{localize(bio, locale)}</ReactMarkdown>
         </div>
       )}
@@ -83,7 +83,7 @@ export function Header({ data, showPdf }) {
                 variant="outline"
                 size="sm"
                 asChild
-                className={`gap-1.5 text-xs group hover:border-accent/40 hover:text-accent transition-all duration-300${printHide ? " print-hide" : ""}`}
+                className={`gap-1.5 text-xs md:text-sm group hover:border-accent/40 hover:text-accent transition-all duration-300${printHide ? " print-hide" : ""}`}
               >
                 <a href={getHref(key, value)} target="_blank" rel="noopener noreferrer">
                   <Icon className="w-3.5 h-3.5" />

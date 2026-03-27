@@ -58,7 +58,7 @@ export function GithubRepos({ githubConfig }) {
       <SectionHeading icon={Github} title={t("github")} />
 
       {error && (
-        <p className="text-text-muted text-sm text-center py-4">
+        <p className="text-text-muted text-sm md:text-base text-center py-4">
           {t("repoError")} — {error}
         </p>
       )}
@@ -78,15 +78,15 @@ export function GithubRepos({ githubConfig }) {
                 )}
               >
                 <div className="flex items-center gap-2 mb-1.5">
-                  <span className="font-semibold text-sm group-hover:text-accent transition-colors truncate">
+                  <span className="font-semibold text-sm md:text-base group-hover:text-accent transition-colors truncate">
                     {repo.name}
                   </span>
                   <ExternalLink className="w-3 h-3 text-text-muted opacity-0 group-hover:opacity-100 transition-opacity ml-auto shrink-0" />
                 </div>
-                <p className="text-text-muted text-xs leading-relaxed line-clamp-2 flex-1 mb-2">
+                <p className="text-text-muted text-xs md:text-sm leading-relaxed line-clamp-2 flex-1 mb-2">
                   {repo.description || t("noDescription")}
                 </p>
-                <div className="flex items-center gap-3 text-xs text-text-muted">
+                <div className="flex items-center gap-3 text-xs md:text-sm text-text-muted">
                   {repo.language && (
                     <span className="flex items-center gap-1.5">
                       <span

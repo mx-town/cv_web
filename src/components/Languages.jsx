@@ -16,8 +16,8 @@ export function Languages({ data }) {
       <div className="flex flex-wrap gap-4">
         {data.map((item, i) => (
           <div key={i} className="flex items-center gap-2.5">
-            <span className="font-medium text-sm">{localize(item.language, locale)}</span>
-            <span className="text-text-muted text-xs font-mono px-2 py-0.5 rounded-md bg-surface border border-border">
+            <span className="font-medium text-sm md:text-base">{localize(item.language, locale)}</span>
+            <span className="text-text-muted text-xs md:text-sm font-mono px-2 py-0.5 rounded-md bg-surface border border-border">
               {localize(item.level, locale)}
             </span>
           </div>

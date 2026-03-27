@@ -21,15 +21,15 @@ export function Education({ data }) {
           >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
               <div>
-                <h3 className="font-semibold text-[15px]">{localize(item.degree, locale)}</h3>
-                <p className="text-accent text-sm font-medium mt-0.5">{item.institution}</p>
+                <h3 className="font-semibold text-[15px] md:text-base">{localize(item.degree, locale)}</h3>
+                <p className="text-accent text-sm md:text-base font-medium mt-0.5">{item.institution}</p>
               </div>
-              <span className="text-text-muted text-xs font-mono shrink-0 px-2 py-0.5 rounded-md bg-bg border border-border">
+              <span className="text-text-muted text-xs md:text-sm font-mono shrink-0 px-2 py-0.5 rounded-md bg-bg border border-border">
                 {localize(item.period, locale)}
               </span>
             </div>
             {item.description && (
-              <p className="text-text-muted text-sm mt-3 leading-relaxed">{localize(item.description, locale)}</p>
+              <p className="text-text-muted text-sm md:text-base mt-3 leading-relaxed">{localize(item.description, locale)}</p>
             )}
           </div>
         ))}

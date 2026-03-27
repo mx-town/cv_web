@@ -62,7 +62,7 @@ function FlipCard({ project, locale, onImageClick }) {
 
   return (
     <div
-      className={cn("flip-card h-72 sm:h-56 cursor-pointer", flipped && "flipped")}
+      className={cn("flip-card h-72 sm:h-56 md:h-64 cursor-pointer", flipped && "flipped")}
       onClick={toggle}
       onKeyDown={handleKey}
       role="button"
@@ -89,8 +89,8 @@ function FlipCard({ project, locale, onImageClick }) {
 
           {/* Info section */}
           <div className="flex flex-col justify-center flex-1 px-4 sm:px-5 py-3 sm:py-0">
-            <h3 className="font-semibold text-base sm:text-base mb-1">{name}</h3>
-            <span className="text-text-muted text-xs font-mono">
+            <h3 className="font-semibold text-base md:text-lg mb-1">{name}</h3>
+            <span className="text-text-muted text-xs md:text-sm font-mono">
               {localize(project.period, locale)}
             </span>
           </div>
@@ -106,8 +106,8 @@ function FlipCard({ project, locale, onImageClick }) {
           {/* Header */}
           <div className="flex items-start justify-between gap-2 mb-2">
             <div>
-              <h3 className="font-semibold text-sm">{name}</h3>
-              <span className="text-text-muted text-xs font-mono">
+              <h3 className="font-semibold text-sm md:text-base">{name}</h3>
+              <span className="text-text-muted text-xs md:text-sm font-mono">
                 {localize(project.period, locale)}
               </span>
             </div>
@@ -122,7 +122,7 @@ function FlipCard({ project, locale, onImageClick }) {
 
           {/* Description — scrollable */}
           {project.description && (
-            <div className="markdown-content text-text-muted text-xs leading-relaxed overflow-hidden flex-1 min-h-0 mb-3">
+            <div className="markdown-content text-text-muted text-xs md:text-sm leading-relaxed overflow-hidden flex-1 min-h-0 mb-3">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {localize(project.description, locale)}
               </ReactMarkdown>
@@ -136,7 +136,7 @@ function FlipCard({ project, locale, onImageClick }) {
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border border-border bg-bg text-text-muted"
+                    className="inline-flex items-center px-2 py-0.5 rounded text-[10px] md:text-xs font-medium border border-border bg-bg text-text-muted"
                   >
                     {t}
                   </span>
@@ -149,7 +149,7 @@ function FlipCard({ project, locale, onImageClick }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent transition-colors shrink-0"
+                className="inline-flex items-center gap-1.5 text-xs md:text-sm text-text-muted hover:text-accent transition-colors shrink-0"
               >
                 <Github className="w-3.5 h-3.5" />
                 GitHub

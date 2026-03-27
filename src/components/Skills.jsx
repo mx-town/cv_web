@@ -16,7 +16,7 @@ export function Skills({ data }) {
       <div className="grid sm:grid-cols-2 gap-6">
         {data.map((group, i) => (
           <div key={i} className="space-y-3">
-            <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.15em] text-text-muted flex items-center gap-2">
+            <h3 className="text-xs md:text-sm font-mono font-semibold uppercase tracking-[0.15em] text-text-muted flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               {localize(group.category, locale)}
             </h3>
@@ -25,7 +25,7 @@ export function Skills({ data }) {
                 <span
                   key={typeof skill === "string" ? skill : j}
                   className={cn(
-                    "inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium",
+                    "inline-flex items-center px-3 py-1 rounded-lg text-xs md:text-sm font-medium",
                     "border border-border bg-surface text-text-muted",
                     "hover:border-text-subtle transition-all duration-200",
                     "cursor-default"

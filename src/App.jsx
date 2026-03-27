@@ -16,7 +16,7 @@ function AppContent() {
     <div className="min-h-screen bg-bg relative">
       <div
         id="cv-content"
-        className="relative max-w-3xl mx-auto px-5 sm:px-8 py-16 sm:py-20"
+        className="relative max-w-3xl lg:max-w-4xl mx-auto px-5 sm:px-8 py-16 sm:py-20"
       >
         <div className="space-y-16">
           <Header data={personal} showPdf={settings.enablePdfDownload} />
@@ -30,9 +30,9 @@ function AppContent() {
         </div>
 
         <footer className="mt-20 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-xs">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-xs md:text-sm">
             <p>&copy; {new Date().getFullYear()} {personal.name}</p>
-            <p className="font-mono text-[11px] opacity-60">{t("builtWith")}</p>
+            <p className="font-mono text-[11px] md:text-xs opacity-60">{t("builtWith")}</p>
           </div>
         </footer>
       </div>
